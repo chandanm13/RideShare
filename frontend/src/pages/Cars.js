@@ -17,9 +17,7 @@ const Cars = () => {
       });
   }, []);
 
-  const handleLogout = () => {
-    console.log('User logged out');
-  };
+ 
 
   return (
     <div className="container">
@@ -39,9 +37,7 @@ const Cars = () => {
             <Link to="/cars"><h4>Cars</h4></Link>
           </li>
         </ul>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+        
       </div>
       <div className="content cars">
         <h1>Cars</h1>

@@ -17,9 +17,7 @@ const VehicleTypeTable = () => {
       });
   }, []);
 
-  const handleLogout = () => {
-    console.log('User logged out');
-  };
+  
 
   return (
     <div className="container">
@@ -39,9 +37,7 @@ const VehicleTypeTable = () => {
             <Link to="/cars">Cars</Link>
           </li>
         </ul>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+        
       </div>
       <div className="content">
         <h1>Vehicle Types</h1>

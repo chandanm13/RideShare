@@ -56,6 +56,7 @@ vehicle_types = [
     }
 ]
 
+# Extended sample data for bookings
 bookings = [
     {
         "reference": "BK001",
@@ -83,9 +84,38 @@ bookings = [
         "status": "Cancelled",
         "otp": "9012",
         "cost": "15.00"
+    },
+    {
+        "reference": "BK004",
+        "date": "2024-05-04",
+        "vehicleType": "Economy",
+        "driver": "Emma Watson",
+        "status": "Confirmed",
+        "otp": "3456",
+        "cost": "20.00"
+    },
+    {
+        "reference": "BK005",
+        "date": "2024-05-05",
+        "vehicleType": "Sedan",
+        "driver": "Chris Evans",
+        "status": "Pending",
+        "otp": "7890",
+        "cost": "30.00"
+    },
+    {
+        "reference": "BK006",
+        "date": "2024-05-06",
+        "vehicleType": "Exclusive",
+        "driver": "Scarlett Johansson",
+        "status": "Confirmed",
+        "otp": "5432",
+        "cost": "50.00"
     }
 ]
-cars=[
+
+# Extended sample data for cars
+cars = [
     {
         "createDate": '2024-05-01',
         "driver": 'John Doe',
@@ -97,8 +127,8 @@ cars=[
         "image": 'N/A',
         "activeStatus": 'Active',
         "approved": 'Yes'
-      },
-      {
+    },
+    {
         "createDate": '2024-05-02',
         "driver": 'Jane Smith',
         "vehicleType": 'SUV',
@@ -109,8 +139,45 @@ cars=[
         "image": 'N/A',
         "activeStatus": 'Inactive',
         "approved": 'No'
-      }
+    },
+    {
+        "createDate": '2024-05-03',
+        "driver": 'Chris Evans',
+        "vehicleType": 'Sedan',
+        "registrationNumber": 'DEF789',
+        "brandName": 'Nissan',
+        "modelNumber": 'Altima',
+        "otherInfo": 'Leather seats',
+        "image": 'N/A',
+        "activeStatus": 'Active',
+        "approved": 'Yes'
+    },
+    {
+        "createDate": '2024-05-04',
+        "driver": 'Emma Watson',
+        "vehicleType": 'Economy',
+        "registrationNumber": 'GHI101',
+        "brandName": 'Hyundai',
+        "modelNumber": 'Elantra',
+        "otherInfo": 'Fuel efficient',
+        "image": 'N/A',
+        "activeStatus": 'Active',
+        "approved": 'Yes'
+    },
+    {
+        "createDate": '2024-05-05',
+        "driver": 'Scarlett Johansson',
+        "vehicleType": 'Exclusive',
+        "registrationNumber": 'JKL202',
+        "brandName": 'BMW',
+        "modelNumber": '5 Series',
+        "otherInfo": 'Luxury interior',
+        "image": 'N/A',
+        "activeStatus": 'Active',
+        "approved": 'Yes'
+    }
 ]
+
 
 @app.get("/vehicle-types")
 def get_vehicle_types():

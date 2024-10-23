@@ -2,34 +2,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Home = () => {
 
-  const handleLogout = () => {
-    // Implement logout functionality if needed
-  };
-
+  const { loginWithRedirect ,logout ,isAuthenticated } = useAuth0();
   return (
     <div className="container">
       <div className="dashboard">
         <h2>Dashboard</h2>
         <ul>
           <li>
-            <Link to="/"><h4>Home</h4></Link>
-          </li>
-          <li>
+            { isAuthenticated ? (
+            <ul>  
+            <li>
             <Link to="/vehicle-type-table">Vehicle Types</Link>
+            </li>
+            <li>
+              <Link to="/my-bookings">My Bookings</Link>
+              </li>
+              <li>
+                <Link to="/cars">Cars</Link>
+              </li>
+              <li>
+                <button className="logout-button" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Log Out</button>
+              </li>
+              </ul>):
+          (
+          <li><button className="logout-button" onClick={() => loginWithRedirect()}>Log In</button></li>
+          )
+          }
           </li>
-          <li>
-            <Link to="/my-bookings">My Bookings</Link>
-          </li>
-          <li>
-            <Link to="/cars">Cars</Link>
-          </li>
+          
         </ul>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+        
       </div>
       <div className="content">
         <h1>RideShare</h1>
